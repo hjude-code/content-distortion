@@ -6,4 +6,45 @@
  */
 
 .wp-block-hjude-content-distortion {
+	position: relative;
+	overflow: hidden;
+}
+
+.wp-block-hjude-content-distortion .itterationLayer:not(.itterationBase){
+	margin: 0px;
+	position: absolute;
+	left: 0px;
+	top:0px;
+	width: 100%;
+	height: 100%;
+}
+
+.wp-block-hjude-content-distortion .itterationLayer{
+	transform-origin: center;
+	--cutInner:50%;
+	--cutOuter:75%;
+	mask-image: radial-gradient(
+		circle farthest-side at 50% 50%,
+		rgba(0,0,0,0) var(--cutInner),
+		rgba(0,0,0,1) var(--cutInner),
+		rgba(0,0,0,1) var(--cutOuter),
+		rgba(0,0,0,0) var(--cutOuter),
+		);
+}
+
+.wp-block-hjude-content-distortion .itterationLayer.itterationBase{
+	--cutInner:75%;
+	--cutOuter:100%;
+	mask-image: radial-gradient(
+		circle farthest-side at 50% 50%,
+		rgba(0,0,0,0) var(--cutInner),
+		rgba(0,0,0,1) var(--cutInner),
+		rgba(0,0,0,1) var(--cutOuter),
+		rgba(0,0,0,1) var(--cutOuter),
+		);
+}
+
+
+.wp-block-hjude-content-distortion .itterationLayer *{
+	background-color:transparent;
 }

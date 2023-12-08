@@ -7,5 +7,37 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+.wp-block-hjude-content-distortion {
+  position: relative;
+  overflow: hidden;
+}
+
+.wp-block-hjude-content-distortion .itterationLayer:not(.itterationBase) {
+  margin: 0px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.wp-block-hjude-content-distortion .itterationLayer {
+  transform-origin: center;
+  --cutInner:50%;
+  --cutOuter:75%;
+  -webkit-mask-image: radial-gradient(circle farthest-side at 50% 50%, rgba(0, 0, 0, 0) var(--cutInner), rgb(0, 0, 0) var(--cutInner), rgb(0, 0, 0) var(--cutOuter), rgba(0, 0, 0, 0) var(--cutOuter));
+          mask-image: radial-gradient(circle farthest-side at 50% 50%, rgba(0, 0, 0, 0) var(--cutInner), rgb(0, 0, 0) var(--cutInner), rgb(0, 0, 0) var(--cutOuter), rgba(0, 0, 0, 0) var(--cutOuter));
+}
+
+.wp-block-hjude-content-distortion .itterationLayer.itterationBase {
+  --cutInner:75%;
+  --cutOuter:100%;
+  -webkit-mask-image: radial-gradient(circle farthest-side at 50% 50%, rgba(0, 0, 0, 0) var(--cutInner), rgb(0, 0, 0) var(--cutInner), rgb(0, 0, 0) var(--cutOuter), rgb(0, 0, 0) var(--cutOuter));
+          mask-image: radial-gradient(circle farthest-side at 50% 50%, rgba(0, 0, 0, 0) var(--cutInner), rgb(0, 0, 0) var(--cutInner), rgb(0, 0, 0) var(--cutOuter), rgb(0, 0, 0) var(--cutOuter));
+}
+
+.wp-block-hjude-content-distortion .itterationLayer * {
+  background-color: transparent;
+}
 
 /*# sourceMappingURL=style-index.css.map*/

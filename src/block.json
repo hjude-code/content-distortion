@@ -7,7 +7,13 @@
 	"category": "design",
 	"icon": "smiley",
 	"supports": {
-		"html": false
+		"html": false,
+		"spacing": {
+			"margin":true,
+			"padding":true
+		},
+		"color": {},
+		"layout": true
 	},
 	"textdomain": "content-distortion",
 	"editorScript": "file:./index.js",

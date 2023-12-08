@@ -5,4 +5,10 @@
 ?>
 <div <?php echo get_block_wrapper_attributes(); ?>>
 	<?php echo $content ?>
+	<?php
+		for ($x = 0; $x < $attributes['itterations']; $x++){
+			echo $content;
+		};
+	?>
+
 </div>

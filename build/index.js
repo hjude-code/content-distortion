@@ -233,7 +233,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"hjude/content-distortion","version":"0.1.0","title":"Content-distortion","category":"design","icon":"smiley","supports":{"html":false,"spacing":{"margin":true,"padding":true},"color":{},"layout":true},"attributes":{"itterations":{"type":"number","default":2}},"textdomain":"content-distortion","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"hjude/content-distortion","version":"0.1.0","title":"Content-distortion","category":"design","icon":"smiley","supports":{"html":false,"spacing":{"margin":true,"padding":true},"color":{},"layout":true},"attributes":{"itterations":{"type":"number","default":2}},"textdomain":"content-distortion","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ })
 

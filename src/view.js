@@ -1,4 +1,6 @@
+const contentBox = document.querySelector('.wp-block-hjude-content-distortion');
 const itterations = document.querySelectorAll(".itterationLayer");
+const baseLayer = document.querySelector('.itterationBase');
 
 const cut = {
     step:Math.round(100/itterations.length),
@@ -6,7 +8,8 @@ const cut = {
     out:Math.round(100/itterations.length)
 }
 
-const rotMax = 50;
+const rotMax = window.getComputedStyle(baseLayer).getPropertyValue('--rot-max');
+console.log(rotMax)
 
 const setCut = (elmnt) =>{
     elmnt.style.setProperty('--cutInner', `${cut.in}%`);
@@ -30,7 +33,7 @@ for  (let i=itterations.length-1; i >= 0; i--){
     setRot(itterations[i]);
 };
 
-const contentBox = document.querySelector('.wp-block-hjude-content-distortion');
+
 contentBox.addEventListener('mousemove', (m)=>{
     const rect = m.target.getBoundingClientRect();
     const x = Math.round( (m.clientX - rect.left)/rect.width * 100 );

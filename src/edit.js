@@ -33,13 +33,16 @@ import './editor.scss';
 export default function Edit(props) {
 
 	const {
-		attributes:{itterations},
+		attributes:{itterations, rotationMax},
 		setAttributes,
 		classname
 	} = props
 
 	const onChangeItterations = (newItterations) =>{
 		setAttributes( {itterations: newItterations} );
+	};
+	const onChangeRotationMax = (newRotationMax) =>{
+		setAttributes( {rotationMax: newRotationMax} );
 	};
 
 	return (
@@ -53,6 +56,15 @@ export default function Edit(props) {
 							onChange={onChangeItterations}
 							min={0}
 							max={10}
+						/>
+					</PanelRow>
+					<PanelRow>
+						<RangeControl
+							label='max-rotation'
+							value={rotationMax}
+							onChange={onChangeRotationMax}
+							min={0}
+							max={360}
 						/>
 					</PanelRow>
 				</PanelBody>

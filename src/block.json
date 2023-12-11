@@ -18,7 +18,11 @@
 	"attributes": {
 		"itterations":{
 			"type":"number",
-			"default":2
+			"default":5
+		},
+		"rotationMax":{
+			"type":"number",
+			"default":10
 		}
 	},
 	"textdomain": "content-distortion",

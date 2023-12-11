@@ -5,7 +5,7 @@
 ?>
 <div <?php echo get_block_wrapper_attributes(); ?>>
 	<?php
-		echo "<div class='itterationLayer itterationBase' aria-hidden='true'>";
+		echo "<div class='itterationLayer itterationBase' style='--rot-max:".$attributes['rotationMax'].";' aria-hidden='true'>";
 		echo $content;
 		echo "</div>";
 	?>

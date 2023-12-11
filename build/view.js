@@ -21,8 +21,9 @@ const setCut = elmnt => {
 };
 const setRot = (elmnt, mx = 50, my = 50, mult = 0) => {
   let rot = (mx - 50) / 100;
-  elmnt.style.setProperty('--cX', `${mx}%`);
-  elmnt.style.setProperty('--cY', `${my}%`);
+
+  // elmnt.style.setProperty('--cX', `${mx}%`);
+  // elmnt.style.setProperty('--cY', `${my}%`);
   elmnt.style.setProperty('--rot', `${rot * rotMax * mult}deg`);
 };
 for (let i = itterations.length - 1; i >= 0; i--) {

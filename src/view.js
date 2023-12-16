@@ -8,8 +8,17 @@ const cut = {
     out:Math.round(100/itterations.length)
 }
 
-const rotMax = window.getComputedStyle(baseLayer).getPropertyValue('--rot-max');
-console.log(rotMax)
+let speedOffset = parseFloat(itterations[0].style.getPropertyValue('--offset'))
+let speed = parseInt(itterations[0].style.getPropertyValue('--speed'));
+let rotMax = parseInt(itterations[0].style.getPropertyValue('--rot-max'));
+
+itterations.forEach((itteration)=>{
+    itteration.style.setProperty('--speed', speed);
+    speed += speedOffset;
+
+    itteration.style.setProperty('--rot', rotMax)
+
+})
 
 const setCut = (elmnt) =>{
     elmnt.style.setProperty('--cutInner', `${cut.in}%`);
@@ -23,9 +32,9 @@ const setRot = (elmnt, mx=50, my=50, mult=0) =>{
     let rot = (mx-50)/100;
 
 
-    // elmnt.style.setProperty('--cX', `${mx}%`);
-    // elmnt.style.setProperty('--cY', `${my}%`);
-    elmnt.style.setProperty('--rot', `${rot*rotMax*mult}deg`);
+    elmnt.style.setProperty('--cX', `${mx}%`);
+    elmnt.style.setProperty('--cY', `${my}%`);
+    // elmnt.style.setProperty('--rot', `${rot*rotMax*mult}deg`);
 }
 
 for  (let i=itterations.length-1; i >= 0; i--){

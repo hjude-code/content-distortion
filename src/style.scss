@@ -26,7 +26,6 @@ div:has(>.wp-block-hjude-content-distortion){
 	pointer-events: none;
 	--cutInner:50%;
 	--cutOuter:75%;
-	--rot:0deg;
 	--cX:50%;
 	--cY:50%;
 	
@@ -37,9 +36,11 @@ div:has(>.wp-block-hjude-content-distortion){
 		rgba(0,0,0,1) var(--cutOuter),
 		rgba(0,0,0,0) var(--cutOuter),
 		);
-	transform: rotate(var(--rot));
+	// transform: rotate(calc(var(--rot) * 1deg));
 	transform-origin: var(--cX) var(--cY);
 	// transform-origin: center;
+
+	animation:calc(1s * var(--speed)) wobble alternate ease-in-out infinite;
 }
 
 .wp-block-hjude-content-distortion .itterationLayer.itterationBase{
@@ -57,4 +58,17 @@ div:has(>.wp-block-hjude-content-distortion){
 
 .wp-block-hjude-content-distortion .itterationLayer *{
 	background-color:transparent;
+}
+
+.wp-block-hjude-content-distortion .itterationLayer:last-child *{
+	// color:var(--wp--preset--color--accent) !important;
+}
+
+@keyframes wobble {
+	from{
+		transform: rotate( calc(var(--rot) * 1deg) );
+	}
+	to{
+		transform: rotate(calc(var(--rot) * -1deg));
+	}
 }

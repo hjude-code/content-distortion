@@ -58,7 +58,9 @@ function Edit(props) {
   const {
     attributes: {
       itterations,
-      rotationMax
+      rotationMax,
+      Speed,
+      Offset
     },
     setAttributes,
     classname
@@ -73,6 +75,16 @@ function Edit(props) {
       rotationMax: newRotationMax
     });
   };
+  const onChangeSpeed = newSpeed => {
+    setAttributes({
+      Speed: newSpeed
+    });
+  };
+  const onChangeOffset = newOffset => {
+    setAttributes({
+      Offset: newOffset
+    });
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
@@ -80,11 +92,23 @@ function Edit(props) {
     value: itterations,
     onChange: onChangeItterations,
     min: 0,
-    max: 10
+    max: 100
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: "max-rotation",
     value: rotationMax,
     onChange: onChangeRotationMax,
+    min: 0,
+    max: 360
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: "speed",
+    value: Speed,
+    onChange: onChangeSpeed,
+    min: 0,
+    max: 360
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: "Offset",
+    value: Offset,
+    onChange: onChangeOffset,
     min: 0,
     max: 360
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, null));
@@ -245,7 +269,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"hjude/content-distortion","version":"0.1.0","title":"Content-distortion","category":"design","icon":"smiley","supports":{"html":false,"spacing":{"margin":true,"padding":true},"color":{},"layout":true},"attributes":{"itterations":{"type":"number","default":5},"rotationMax":{"type":"number","default":10}},"textdomain":"content-distortion","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"hjude/content-distortion","version":"0.1.0","title":"Content-distortion","category":"design","icon":"smiley","supports":{"html":false,"spacing":{"margin":true,"padding":true},"color":{},"layout":true},"attributes":{"itterations":{"type":"number","default":5},"rotationMax":{"type":"number","default":10},"Speed":{"type":"number","default":10},"Offset":{"type":"number","default":0.25}},"textdomain":"content-distortion","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ })
 

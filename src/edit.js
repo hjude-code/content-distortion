@@ -33,7 +33,7 @@ import './editor.scss';
 export default function Edit(props) {
 
 	const {
-		attributes:{itterations, rotationMax},
+		attributes:{itterations, rotationMax, Speed, Offset},
 		setAttributes,
 		classname
 	} = props
@@ -43,6 +43,12 @@ export default function Edit(props) {
 	};
 	const onChangeRotationMax = (newRotationMax) =>{
 		setAttributes( {rotationMax: newRotationMax} );
+	};
+	const onChangeSpeed = (newSpeed) =>{
+		setAttributes( {Speed: newSpeed} );
+	};
+	const onChangeOffset = (newOffset) =>{
+		setAttributes( {Offset: newOffset} );
 	};
 
 	return (
@@ -55,7 +61,7 @@ export default function Edit(props) {
 							value={itterations}
 							onChange={onChangeItterations}
 							min={0}
-							max={10}
+							max={100}
 						/>
 					</PanelRow>
 					<PanelRow>
@@ -63,6 +69,24 @@ export default function Edit(props) {
 							label='max-rotation'
 							value={rotationMax}
 							onChange={onChangeRotationMax}
+							min={0}
+							max={360}
+						/>
+					</PanelRow>
+					<PanelRow>
+						<RangeControl
+							label='speed'
+							value={Speed}
+							onChange={onChangeSpeed}
+							min={0}
+							max={360}
+						/>
+					</PanelRow>
+					<PanelRow>
+						<RangeControl
+							label='Offset'
+							value={Offset}
+							onChange={onChangeOffset}
 							min={0}
 							max={360}
 						/>

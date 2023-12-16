@@ -23,6 +23,14 @@
     "rotationMax": {
       "type": "number",
       "default": 10
+    },
+    "Speed": {
+      "type": "number",
+      "default": 10
+    },
+    "Offset": {
+      "type": "number",
+      "default": 0.25
     }
   },
   "textdomain": "content-distortion",

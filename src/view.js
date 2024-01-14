@@ -43,8 +43,18 @@ for  (let i=itterations.length-1; i >= 0; i--){
 };
 
 
-contentBox.addEventListener('mousemove', (m)=>{
-    const rect = m.target.getBoundingClientRect();
+// contentBox.addEventListener('mousemove', (m)=>{
+//     const rect = m.target.getBoundingClientRect();
+//     const x = Math.round( (m.clientX - rect.left)/rect.width * 100 );
+//     const y = Math.round( (m.clientY - rect.top)/rect.height * 100 );
+    
+//     for  (let i=itterations.length-1; i >= 0; i--){
+//         setRot(itterations[i], x, y, i);
+//     };
+// });
+
+window.addEventListener('mousemove', (m)=>{
+    const rect = contentBox.getBoundingClientRect();
     const x = Math.round( (m.clientX - rect.left)/rect.width * 100 );
     const y = Math.round( (m.clientY - rect.top)/rect.height * 100 );
     
